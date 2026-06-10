@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salon L'Aparté – Coiffure à Monswiller | Muriel</title>
+  <meta name="description" content="Salon L'Aparté par Muriel, artiste capillaire à Monswiller. Balayages, coiffures de mariées, créations capillaires sur-mesure. Rendez-vous au 06 68 63 39 60.">
+  <meta name="theme-color" content="#FAFAF7">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@400;600&family=Jost:ital,wght@0,200;0,300;0,400;1,200&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── RESET ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    img { display: block; max-width: 100%; }
+
+    /* ── TOKENS ──────────────────────────────────────────────── */
+    :root {
+      --iv:       #FAFAF7;
+      --iv2:      #F4F1EB;
+      --blanc:    #FFFFFF;
+      --sable:    #C4AE8A;
+      --sable-d:  #A8927A;
+      --noir:     #1C1C1A;
+      --gris:     #6B6560;
+      --muted:    #B0A898;
+      --sep:      #E8E0D4;
+    }
+
+    /* ── BASE ────────────────────────────────────────────────── */
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--iv);
+      color: var(--noir);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--iv); }
+    ::-webkit-scrollbar-thumb { background: var(--sep); }
+
+    /* ── TYPE HELPERS ────────────────────────────────────────── */
+    .label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 11px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--sable);
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .stitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(26px, 3.6vw, 46px);
+      letter-spacing: .12em;
+      color: var(--noir);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .stitle-italic {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(26px, 3.6vw, 46px);
+      letter-spacing: .10em;
+      color: var(--noir);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .gold-rule {
+      width: 52px;
+      height: 1px;
+      background: var(--sable);
+      display: block;
+      margin-top: 32px;
+    }
+    .center .gold-rule { margin: 24px auto 0; }
+
+    /* ── BUTTONS ─────────────────────────────────────────────── */
+    .btn-dark {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      background: var(--noir);
+      color: var(--iv);
+      padding: 15px 36px;
+      border: none;
+      border-radius: 0;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      transition: background .3s;
+    }
+    .btn-dark:hover { background: #3A3A38; }
+
+    .btn-sable {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--gris);
+      padding: 14px 36px;
+      border: 1px solid var(--sable);
+      border-radius: 0;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      transition: background .3s, color .3s;
+    }
+    .btn-sable:hover { background: var(--sable); color: var(--iv); }
+
+    /* ── LAYOUT ──────────────────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 48px; }
+
+    /* ── LOGO SVG HELPERS ────────────────────────────────────── */
+    .logo-badge   { display: block; }
+    .logo-compact { display: block; }
+
+    /* ── NAVBAR ──────────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      height: 72px;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+      background: rgba(250,250,247,.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: .5px solid var(--sep);
+      transition: background .3s;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+      flex: 1;
+    }
+
+    .nav-center {
+      flex: 0 0 auto;
+      margin: 0 32px;
+    }
+
+    .nav-right-group {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 28px;
+    }
+
+    .nav-links-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-left a,
+    .nav-links-right a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gris);
+      text-decoration: none;
+      transition: color .3s;
+    }
+    .nav-left a:hover,
+    .nav-links-right a:hover { color: var(--noir); }
+
+    .nav-social {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .nav-social a {
+      color: var(--muted);
+      transition: color .3s;
+      display: flex;
+      align-items: center;
+    }
+    .nav-social a:hover { color: var(--gris); }
+
+    /* Hamburger */
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      margin-left: auto;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .burger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--gris);
+      transition: all .3s;
+    }
+    .burger.open span:nth-child(1) { transform: rotate(45deg) translate(4px,4px); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px,-4px); }
+
+    /* Mobile overlay */
+    #mob-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 800;
+      background: var(--iv);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+    #mob-overlay.open { display: flex; }
+    #mob-overlay a {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 36px;
+      letter-spacing: .08em;
+      color: var(--noir);
+      text-decoration: none;
+      transition: color .3s;
+    }
+    #mob-overlay a:hover { color: var(--gris); }
+    #mob-overlay .mob-social {
+      display: flex;
+      gap: 20px;
+      margin-top: 8px;
+    }
+    #mob-overlay .mob-social a {
+      font-size: 0;
+      color: var(--muted);
+    }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('photos/salon/salon.jpg') center/cover no-repeat;
+      background-attachment: fixed;
+    }
+
+    .hero-ov {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(250,250,247,.82) 0%,
+        rgba(250,250,247,.07) 40%,
+        rgba(244,241,235,.93) 100%
+      );
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 130px 24px 100px;
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .hero-logo-wrap {
+      max-width: 280px;
+      width: 100%;
+      margin: 0 auto 44px;
+    }
+
+    .hero-slogan {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(18px, 2.2vw, 26px);
+      letter-spacing: .08em;
+      color: var(--gris);
+      max-width: 500px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+
+    .hero-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      animation: arrowFloat 2.2s ease-in-out infinite;
+      color: var(--sable);
+    }
+    @keyframes arrowFloat {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── SECTION COMMON ──────────────────────────────────────── */
+    .section-pad { padding: 108px 48px; }
+    .section-pad-alt { padding: 0; }
+
+    .section-iv   { background: var(--iv); }
+    .section-iv2  { background: var(--iv2); }
+
+    /* ── À PROPOS ────────────────────────────────────────────── */
+    #apropos { background: var(--iv2); }
+
+    .apropos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 108px 48px;
+    }
+
+    .apropos-text p {
+      font-size: 15.5px;
+      color: var(--gris);
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+
+    .signature-muriel {
+      font-family: 'Dancing Script', cursive;
+      font-weight: 400;
+      font-size: 32px;
+      color: var(--sable-d);
+      margin-top: 24px;
+      display: block;
+    }
+
+    .apropos-photo {
+      position: relative;
+      overflow: hidden;
+      height: 560px;
+    }
+    .apropos-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── RÉALISATIONS ────────────────────────────────────────── */
+    #realisations { background: var(--iv); }
+
+    .real-head { text-align: center; margin-bottom: 52px; }
+
+    .gal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .gal-item {
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .gal-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter .4s ease, transform .5s ease;
+      display: block;
+    }
+    .gal-item:hover img {
+      filter: saturate(.85) brightness(1.05);
+      transform: scale(1.02);
+    }
+
+    /* ── MARIÉE ──────────────────────────────────────────────── */
+    #mariage { background: var(--iv2); }
+
+    .mariage-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      min-height: 680px;
+    }
+
+    .mariage-img {
+      overflow: hidden;
+    }
+    .mariage-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mariage-text {
+      padding: 96px 72px 96px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .mariage-text p {
+      font-size: 15.5px;
+      color: var(--gris);
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+
+    .mariage-text .gold-rule { margin-top: 20px; margin-bottom: 36px; }
+
+    /* ── AVIS ────────────────────────────────────────────────── */
+    #avis { background: var(--iv); }
+
+    .avis-head { text-align: center; margin-bottom: 60px; }
+
+    .avis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 52px;
+    }
+
+    .avis-card {
+      background: var(--blanc);
+      box-shadow: 0 2px 16px rgba(0,0,0,.05);
+      padding: 40px 40px 32px;
+    }
+
+    .avis-stars {
+      color: var(--sable);
+      font-size: 15px;
+      letter-spacing: 3px;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .avis-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 19px;
+      color: var(--noir);
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+
+    .avis-meta {
+      margin-bottom: 24px;
+    }
+    .avis-author {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--gris);
+      display: block;
+    }
+    .avis-date {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: .1em;
+      display: block;
+      margin-top: 3px;
+    }
+
+    .avis-response {
+      padding: 18px 22px;
+      background: var(--iv2);
+      border-left: 2px solid var(--sable);
+    }
+    .avis-response-lbl {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 9.5px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .avis-response p {
+      font-family: 'Dancing Script', cursive;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--sable-d);
+      line-height: 1.6;
+    }
+
+    .avis-cta { text-align: center; }
+
+    /* ── CONTACT ─────────────────────────────────────────────── */
+    #contact { background: var(--iv2); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 108px 48px;
+    }
+
+    .contact-info .stitle { margin-bottom: 44px; }
+
+    .c-block { margin-bottom: 32px; }
+    .c-lbl {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 10px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--sable);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .c-block p,
+    .c-block a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--gris);
+      text-decoration: none;
+      line-height: 1.7;
+      display: block;
+    }
+    .c-block a:hover { color: var(--noir); }
+
+    .rdv-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--gris);
+      margin-top: 4px;
+    }
+
+    .c-social {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .c-social a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--gris);
+      text-decoration: none;
+      transition: color .3s;
+    }
+    .c-social a:hover { color: var(--noir); }
+
+    .contact-map-wrap { position: sticky; top: 88px; }
+    .contact-map-wrap iframe {
+      width: 100%;
+      height: 420px;
+      border: .5px solid var(--sep);
+      display: block;
+      filter: grayscale(.3) sepia(.1) brightness(1.05);
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    #footer {
+      background: var(--noir);
+      padding: 72px 48px 56px;
+      text-align: center;
+    }
+
+    .footer-logo-wrap {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .footer-slogan {
+      font-family: 'Dancing Script', cursive;
+      font-weight: 400;
+      font-size: 22px;
+      color: var(--sable-d);
+      margin-bottom: 28px;
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .footer-social a {
+      color: var(--gris);
+      transition: color .3s;
+      display: flex;
+      align-items: center;
+    }
+    .footer-social a:hover { color: var(--iv); }
+
+    .footer-copy {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(176,168,152,.4);
+    }
+
+    /* ── MOBILE FLOAT CTA ────────────────────────────────────── */
+    #mob-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 56px;
+      background: var(--noir);
+      color: var(--iv);
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 13px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      z-index: 700;
+      transition: background .3s;
+    }
+    #mob-cta:hover { background: #3A3A38; }
+
+    /* ── FADE-IN ANIMATIONS ──────────────────────────────────── */
+    .fi {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .8s ease-out, transform .8s ease-out;
+    }
+    .fi.show { opacity: 1; transform: translateY(0); }
+    .fi.d1 { transition-delay: .1s; }
+    .fi.d2 { transition-delay: .2s; }
+    .fi.d3 { transition-delay: .3s; }
+    .fi.d4 { transition-delay: .4s; }
+    .fi.d5 { transition-delay: .5s; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .apropos-grid  { grid-template-columns: 1fr; gap: 48px; padding: 80px 40px; }
+      .apropos-photo { height: 400px; }
+      .mariage-grid  { grid-template-columns: 1fr; }
+      .mariage-img   { height: 480px; }
+      .mariage-text  { padding: 64px 40px; }
+      .contact-grid  { grid-template-columns: 1fr; gap: 48px; }
+      .contact-map-wrap { position: static; }
+    }
+
+    @media (max-width: 768px) {
+      #nav { padding: 0 20px; }
+      .nav-left, .nav-links-right, .nav-social { display: none; }
+      .nav-center { margin: 0 auto; }
+      .burger { display: flex; }
+      #mob-cta { display: flex; }
+      body { padding-bottom: 56px; }
+
+      .section-pad { padding: 72px 24px; }
+      .apropos-grid { padding: 72px 24px; }
+      .contact-grid { padding: 72px 24px; }
+      .gal-grid { grid-template-columns: repeat(2, 1fr); }
+      .avis-grid { grid-template-columns: 1fr; }
+      .wrap { padding: 0 24px; }
+      .hero-btns { flex-direction: column; align-items: stretch; max-width: 260px; margin: 0 auto; }
+      .hero-btns .btn-dark, .hero-btns .btn-sable { text-align: center; }
+      #hero { background-attachment: scroll; }
+    }
+
+    @media (max-width: 480px) {
+      .gal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ MOBILE OVERLAY ════════════════════════════════════════════ -->
+<div id="mob-overlay">
+  <a href="#accueil"     onclick="closeMenu()">Accueil</a>
+  <a href="#apropos"     onclick="closeMenu()">À propos</a>
+  <a href="#realisations" onclick="closeMenu()">Réalisations</a>
+  <a href="#avis"        onclick="closeMenu()">Avis</a>
+  <a href="#contact"     onclick="closeMenu()">Contact</a>
+  <div class="mob-social">
+    <a href="https://www.instagram.com/muriel_laparte_" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" color="#B0A898">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+    <a href="https://www.facebook.com/mucar67/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" color="#B0A898">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<!-- ══ NAVBAR ════════════════════════════════════════════════════ -->
+<nav id="nav">
+  <ul class="nav-left">
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#apropos">À propos</a></li>
+  </ul>
+
+  <div class="nav-center">
+    <a href="#accueil" aria-label="Salon L'Aparté – Accueil">
+      <!-- Logo compact horizontal inline SVG -->
+      <svg viewBox="0 0 230 46" xmlns="http://www.w3.org/2000/svg" height="40" width="auto">
+        <text x="115" y="27" font-family="'Cormorant Garamond','Garamond',serif" font-weight="300" font-size="28" letter-spacing="7" fill="#1C1C1A" text-anchor="middle">L'APARTÉ</text>
+        <line x1="58" y1="33" x2="172" y2="33" stroke="#C4AE8A" stroke-width="0.7"/>
+        <text x="115" y="43" font-family="'Jost','Helvetica Neue',sans-serif" font-weight="200" font-size="7.5" letter-spacing="4" fill="#8A8070" text-anchor="middle">COIFFURE · MONSWILLER</text>
+      </svg>
+    </a>
+  </div>
+
+  <div class="nav-right-group">
+    <ul class="nav-links-right">
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-social">
+      <a href="https://www.instagram.com/muriel_laparte_" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/mucar67/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════ -->
+<section id="accueil" style="padding:0">
+  <div id="hero">
+    <div class="hero-ov"></div>
+    <div class="hero-inner">
+      <div class="hero-logo-wrap fi">
+        <!-- Logo badge pleine taille inline SVG -->
+        <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" width="100%" style="display:block">
+          <rect x="1.5" y="1.5" width="317" height="207" rx="4" fill="#FAFAF7" stroke="#E8E0D4" stroke-width="1.5"/>
+          <rect x="10" y="10" width="300" height="190" rx="2" fill="none" stroke="#D4C9B8" stroke-width="0.8"/>
+          <text x="160" y="61" font-family="'Cormorant Garamond','Garamond',serif" font-weight="300" font-size="37" letter-spacing="9" fill="#1C1C1A" text-anchor="middle">L'APARTÉ</text>
+          <line x1="46" y1="75" x2="148" y2="75" stroke="#C4AE8A" stroke-width="0.8"/>
+          <circle cx="160" cy="75" r="2.5" fill="#C4AE8A"/>
+          <line x1="172" y1="75" x2="274" y2="75" stroke="#C4AE8A" stroke-width="0.8"/>
+          <text x="160" y="90" font-family="'Jost','Helvetica Neue',sans-serif" font-weight="200" font-size="8.5" letter-spacing="5" fill="#8A8070" text-anchor="middle">COIFFURE · MONSWILLER</text>
+          <path d="M 55,124 C 76,106 98,142 119,124 C 140,106 162,142 183,124 C 204,106 226,142 247,124 C 261,112 272,122 280,124" stroke="#C4AE8A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M 72,132 C 92,120 114,144 134,132 C 154,120 176,144 196,132 C 216,120 236,144 252,132" stroke="#C4AE8A" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.55"/>
+          <path d="M 92,116 C 108,108 126,124 144,116 C 162,108 180,124 198,116 C 213,109 226,117 234,116" stroke="#C4AE8A" stroke-width="0.6" fill="none" stroke-linecap="round" opacity="0.4"/>
+          <text x="160" y="161" font-family="'Dancing Script',cursive" font-weight="400" font-size="22" fill="#8A8070" text-anchor="middle">by Muriel</text>
+          <line x1="74" y1="174" x2="148" y2="174" stroke="#C4AE8A" stroke-width="0.6"/>
+          <circle cx="160" cy="174" r="1.8" fill="#C4AE8A"/>
+          <line x1="172" y1="174" x2="246" y2="174" stroke="#C4AE8A" stroke-width="0.6"/>
+          <text x="160" y="190" font-family="'Jost','Helvetica Neue',sans-serif" font-weight="200" font-size="6.5" letter-spacing="3.5" fill="#B0A898" text-anchor="middle">CRÉATION CAPILLAIRE ARTISTIQUE</text>
+        </svg>
+      </div>
+
+      <p class="hero-slogan fi d1">"L'art de sublimer chaque femme, un geste à la fois."</p>
+
+      <div class="hero-btns fi d2">
+        <a href="tel:+33668633960" class="btn-dark">Prendre rendez-vous</a>
+        <a href="#realisations" class="btn-sable">Découvrir</a>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══ À PROPOS ═══════════════════════════════════════════════════ -->
+<section id="apropos">
+  <div class="apropos-grid">
+    <div class="apropos-text fi">
+      <span class="label">—— Le Salon</span>
+      <h2 class="stitle">Un espace dédié à votre beauté</h2>
+      <p>Muriel, artiste capillaire passionnée, accueille chaque cliente dans son salon intimiste de Monswiller. Spécialisée dans les créations capillaires artistiques, les balayages, les coiffures de mariées et les mises en beauté événementielles, elle met son talent au service de votre singularité.</p>
+      <p>Chaque prestation est un moment de soin, d'écoute et de création sur-mesure. Ici, pas de routine — chaque geste est pensé pour révéler ce qui vous est propre, avec la précision et la douceur d'une artisane passionnée par son art.</p>
+      <p>Le salon L'Aparté, c'est un espace à part, un moment rien qu'à vous.</p>
+      <hr class="gold-rule">
+      <span class="signature-muriel">Muriel</span>
+    </div>
+    <div class="apropos-photo fi d2">
+      <img src="photos/salon/S2.jpg" alt="Espace d'accueil du salon L'Aparté, Monswiller">
+    </div>
+  </div>
+</section>
+
+<!-- ══ RÉALISATIONS ═══════════════════════════════════════════════ -->
+<section id="realisations" class="section-pad section-iv">
+  <div class="wrap">
+    <div class="real-head fi">
+      <span class="label">—— Réalisations</span>
+      <h2 class="stitle">Nos Réalisations</h2>
+      <hr class="gold-rule" style="margin:20px auto 0">
+    </div>
+  </div>
+  <div class="gal-grid" style="margin-top:48px">
+    <div class="gal-item fi d1"><img src="photos/coiffures/1.jpg"  alt="Coiffure mariée avec fleurs — L'Aparté Monswiller"></div>
+    <div class="gal-item fi d2"><img src="photos/coiffures/8.jpg"  alt="Chignon de mariée fleurs blanches — Muriel L'Aparté"></div>
+    <div class="gal-item fi d3"><img src="photos/coiffures/7.jpg"  alt="Chignon élégant fleurs bleues — L'Aparté"></div>
+    <div class="gal-item fi d1"><img src="photos/coiffures/11.jpg" alt="Balayage caramel ombré — L'Aparté Monswiller"></div>
+    <div class="gal-item fi d2"><img src="photos/coiffures/4.jpg"  alt="Balayage blond cendré — L'Aparté"></div>
+    <div class="gal-item fi d3"><img src="photos/coiffures/5.png"  alt="Balayage rose doré — L'Aparté"></div>
+    <div class="gal-item fi d1"><img src="photos/coiffures/6.jpg"  alt="Balayage caramel longs cheveux — L'Aparté"></div>
+    <div class="gal-item fi d2"><img src="photos/coiffures/13.jpg" alt="Mèches blondes en salon — L'Aparté"></div>
+    <div class="gal-item fi d3"><img src="photos/coiffures/9.jpg"  alt="Coupe courte cuivrée — L'Aparté Monswiller"></div>
+    <div class="gal-item fi d1"><img src="photos/coiffures/3.jpg"  alt="Chignon court avec fleurs — L'Aparté"></div>
+    <div class="gal-item fi d2"><img src="photos/coiffures/2.jpg"  alt="Chignon argenté — L'Aparté Monswiller"></div>
+    <div class="gal-item fi d3"><img src="photos/coiffures/12.jpg" alt="Couleur audacieuse rose — L'Aparté"></div>
+  </div>
+</section>
+
+<!-- ══ MARIÉE ═════════════════════════════════════════════════════ -->
+<section id="mariage" class="section-pad-alt section-iv2">
+  <div class="mariage-grid">
+    <div class="mariage-img fi">
+      <img src="photos/coiffures/8.jpg" alt="Chignon de mariée avec fleurs blanches par Muriel — L'Aparté">
+    </div>
+    <div class="mariage-text fi d2">
+      <span class="label">—— Jour J</span>
+      <h2 class="stitle-italic">Votre plus beau jour, magnifié</h2>
+      <p>Muriel accompagne les mariées depuis des années, sublimant chignons romantiques, tresses florales et ondes naturelles. Chaque coiffure de mariée est une création unique, pensée pour vous ressembler et rester gravée dans les mémoires.</p>
+      <p>Elle se déplace à domicile ou sur le lieu de réception pour que ce moment reste entièrement le vôtre — serein, précieux, inoubliable.</p>
+      <hr class="gold-rule">
+      <a href="tel:+33668633960" class="btn-dark" style="margin-top:36px">Réserver pour votre mariage</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AVIS ═══════════════════════════════════════════════════════ -->
+<section id="avis" class="section-pad section-iv">
+  <div class="wrap">
+    <div class="avis-head fi">
+      <span class="label">—— Elles témoignent</span>
+      <h2 class="stitle">Elles témoignent</h2>
+      <hr class="gold-rule" style="margin:20px auto 0">
+    </div>
+
+    <div class="avis-grid">
+
+      <div class="avis-card fi d1">
+        <span class="avis-stars">★★★★★</span>
+        <p class="avis-quote">"Si vous cherchez une coiffeuse exceptionnelle pour votre mariage, tant professionnellement qu'humainement, foncez : Muriel est extraordinaire !"</p>
+        <div class="avis-meta">
+          <span class="avis-author">Clémence Antal</span>
+          <span class="avis-date">Il y a 3 semaines · Mai 2025 · Google</span>
+        </div>
+        <div class="avis-response">
+          <span class="avis-response-lbl">Réponse de Muriel</span>
+          <p>Merci pour ce commentaire 🥰 J'ai passé un moment exceptionnel avec vous deux ! Votre gentillesse et votre humour à tous les deux m'ont fait passer une superbe journée. Je vous souhaite encore énormément de bonheur pour la suite ❤️</p>
+        </div>
+      </div>
+
+      <div class="avis-card fi d2">
+        <span class="avis-stars">★★★★★</span>
+        <p class="avis-quote">"J'ai choisi Muriel comme coiffeuse pour mon mariage, elle s'est également occupée de 4 autres de mes proches et je n'ai qu'une seule chose à dire : quel talent ! Muriel a sublimé tout le monde, elle a su jongler avec les attentes de chacune."</p>
+        <div class="avis-meta">
+          <span class="avis-author">Jessica LIS</span>
+          <span class="avis-date">Il y a 3 semaines · Mai 2025 · Google</span>
+        </div>
+        <div class="avis-response">
+          <span class="avis-response-lbl">Réponse de Muriel</span>
+          <p>Mais que dire.. ça me va droit au cœur ♥️ vous étiez très accueillante c'était un super moment !</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="avis-cta fi">
+      <a href="https://share.google/UjZqmjeo7zY8MvEVi" target="_blank" rel="noopener" class="btn-sable">Voir tous les avis Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info fi">
+      <span class="label">—— Nous trouver</span>
+      <h2 class="stitle">Contact</h2>
+
+      <div class="c-block">
+        <span class="c-lbl">Adresse</span>
+        <p>6 Rue Haute</p>
+        <p>67700 Monswiller, Alsace</p>
+      </div>
+
+      <div class="c-block">
+        <span class="c-lbl">Téléphone</span>
+        <a href="tel:+33668633960">06 68 63 39 60</a>
+      </div>
+
+      <div class="c-block">
+        <span class="c-lbl">Rendez-vous</span>
+        <div class="rdv-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4AE8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Sur rendez-vous uniquement, par téléphone
+        </div>
+      </div>
+
+      <div class="c-block">
+        <span class="c-lbl">Réseaux sociaux</span>
+        <div class="c-social">
+          <a href="https://www.instagram.com/muriel_laparte_" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/>
+            </svg>
+            @muriel_laparte_
+          </a>
+          <a href="https://www.facebook.com/mucar67/" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+      <a href="tel:+33668633960" class="btn-dark" style="margin-top:8px">Appeler Muriel</a>
+    </div>
+
+    <div class="contact-map-wrap fi d2">
+      <iframe
+        src="https://maps.google.com/maps?q=6+Rue+Haute%2C+67700+Monswiller%2C+France&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        title="Salon L'Aparté – 6 Rue Haute, Monswiller"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════════════ -->
+<footer id="footer">
+  <!-- Logo badge version ivoire (footer dark) -->
+  <div class="footer-logo-wrap">
+    <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" height="80" style="display:block">
+      <rect x="1.5" y="1.5" width="317" height="207" rx="4" fill="none" stroke="rgba(232,224,212,.2)" stroke-width="1.5"/>
+      <rect x="10" y="10" width="300" height="190" rx="2" fill="none" stroke="rgba(212,201,184,.15)" stroke-width="0.8"/>
+      <text x="160" y="61" font-family="'Cormorant Garamond','Garamond',serif" font-weight="300" font-size="37" letter-spacing="9" fill="#FAFAF7" text-anchor="middle">L'APARTÉ</text>
+      <line x1="46" y1="75" x2="148" y2="75" stroke="#C4AE8A" stroke-width="0.8"/>
+      <circle cx="160" cy="75" r="2.5" fill="#C4AE8A"/>
+      <line x1="172" y1="75" x2="274" y2="75" stroke="#C4AE8A" stroke-width="0.8"/>
+      <text x="160" y="90" font-family="'Jost','Helvetica Neue',sans-serif" font-weight="200" font-size="8.5" letter-spacing="5" fill="#8A8070" text-anchor="middle">COIFFURE · MONSWILLER</text>
+      <path d="M 55,124 C 76,106 98,142 119,124 C 140,106 162,142 183,124 C 204,106 226,142 247,124 C 261,112 272,122 280,124" stroke="#C4AE8A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M 72,132 C 92,120 114,144 134,132 C 154,120 176,144 196,132 C 216,120 236,144 252,132" stroke="#C4AE8A" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.55"/>
+      <text x="160" y="161" font-family="'Dancing Script',cursive" font-weight="400" font-size="22" fill="#8A8070" text-anchor="middle">by Muriel</text>
+      <text x="160" y="190" font-family="'Jost','Helvetica Neue',sans-serif" font-weight="200" font-size="6.5" letter-spacing="3.5" fill="rgba(176,168,152,.5)" text-anchor="middle">CRÉATION CAPILLAIRE ARTISTIQUE</text>
+    </svg>
+  </div>
+
+  <p class="footer-slogan">L'art de sublimer chaque femme</p>
+
+  <div class="footer-social">
+    <a href="https://www.instagram.com/muriel_laparte_" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+    <a href="https://www.facebook.com/mucar67/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </svg>
+    </a>
+  </div>
+
+  <p class="footer-copy">© 2025 Salon L'Aparté — Muriel — Monswiller</p>
+</footer>
+
+<!-- ══ MOBILE FLOAT CTA ══════════════════════════════════════════ -->
+<a href="tel:+33668633960" id="mob-cta" aria-label="Appeler Muriel">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+  </svg>
+  Appeler Muriel
+</a>
+
+<!-- ══ SCRIPT ═════════════════════════════════════════════════════ -->
+<script>
+  function toggleMenu() {
+    const o = document.getElementById('mob-overlay');
+    const b = document.getElementById('burger');
+    o.classList.toggle('open');
+    b.classList.toggle('open');
+    document.body.style.overflow = o.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('mob-overlay').classList.remove('open');
+    document.getElementById('burger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* Navbar background on scroll */
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').style.background =
+      window.scrollY > 60 ? 'rgba(250,250,247,.98)' : 'rgba(250,250,247,.94)';
+  }, { passive: true });
+
+  /* Fade-in via IntersectionObserver */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('show');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fi').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

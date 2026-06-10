@@ -1,0 +1,31 @@
+<svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" width="320" height="210">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;family=Dancing+Script:wght@400&amp;family=Jost:wght@200&amp;display=swap');
+    </style>
+  </defs>
+  <!-- Outer background + border -->
+  <rect x="1.5" y="1.5" width="317" height="207" rx="4" fill="#FAFAF7" stroke="#E8E0D4" stroke-width="1.5"/>
+  <!-- Inner decorative border -->
+  <rect x="10" y="10" width="300" height="190" rx="2" fill="none" stroke="#D4C9B8" stroke-width="0.8"/>
+  <!-- Title -->
+  <text x="160" y="61" font-family="'Cormorant Garamond','Garamond',serif" font-weight="300" font-size="37" letter-spacing="9" fill="#1C1C1A" text-anchor="middle">L'APARTÉ</text>
+  <!-- Separator top: line ○ line -->
+  <line x1="46" y1="75" x2="148" y2="75" stroke="#C4AE8A" stroke-width="0.8"/>
+  <circle cx="160" cy="75" r="2.5" fill="#C4AE8A"/>
+  <line x1="172" y1="75" x2="274" y2="75" stroke="#C4AE8A" stroke-width="0.8"/>
+  <!-- Subtitle -->
+  <text x="160" y="90" font-family="'Jost','Helvetica Neue',sans-serif" font-weight="200" font-size="8.5" letter-spacing="5" fill="#8A8070" text-anchor="middle">COIFFURE · MONSWILLER</text>
+  <!-- Hair wave motif — 3 layered strands -->
+  <path d="M 55,124 C 76,106 98,142 119,124 C 140,106 162,142 183,124 C 204,106 226,142 247,124 C 261,112 272,122 280,124" stroke="#C4AE8A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 72,132 C 92,120 114,144 134,132 C 154,120 176,144 196,132 C 216,120 236,144 252,132" stroke="#C4AE8A" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 92,116 C 108,108 126,124 144,116 C 162,108 180,124 198,116 C 213,109 226,117 234,116" stroke="#C4AE8A" stroke-width="0.6" fill="none" stroke-linecap="round" opacity="0.4"/>
+  <!-- Signature -->
+  <text x="160" y="161" font-family="'Dancing Script',cursive" font-weight="400" font-size="22" fill="#8A8070" text-anchor="middle">by Muriel</text>
+  <!-- Separator bottom: line ○ line -->
+  <line x1="74" y1="174" x2="148" y2="174" stroke="#C4AE8A" stroke-width="0.6"/>
+  <circle cx="160" cy="174" r="1.8" fill="#C4AE8A"/>
+  <line x1="172" y1="174" x2="246" y2="174" stroke="#C4AE8A" stroke-width="0.6"/>
+  <!-- Baseline -->
+  <text x="160" y="190" font-family="'Jost','Helvetica Neue',sans-serif" font-weight="200" font-size="6.5" letter-spacing="3.5" fill="#B0A898" text-anchor="middle">CRÉATION CAPILLAIRE ARTISTIQUE</text>
+</svg>
